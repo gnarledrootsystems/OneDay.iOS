@@ -10,5 +10,5 @@ import Foundation
 struct HourBlock {
     let id: Int
     let time: String
-    let task: TaskItem
+    var task: TaskItem
 }

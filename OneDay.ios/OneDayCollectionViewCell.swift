@@ -27,6 +27,13 @@ class OneDayCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
+    let taskLabel: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.textAlignment = .left
+        label.numberOfLines = 0
+        return label
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: .zero)
         setupViews()
@@ -34,21 +41,30 @@ class OneDayCollectionViewCell: UICollectionViewCell {
      }
     
     private func setupViews() {
-            contentView.clipsToBounds = true
-            contentView.backgroundColor = .white
+        contentView.clipsToBounds = true
+        contentView.backgroundColor = .white
 
-            contentView.addSubview(hourLabel)
-        }
+        contentView.addSubview(hourLabel)
+        contentView.addSubview(taskLabel)
+    }
     
     private func setupLayouts() {
         hourLabel.translatesAutoresizingMaskIntoConstraints = false
+        taskLabel.translatesAutoresizingMaskIntoConstraints = false
         
 
-        // Layout constraints for `usernameLabel`
+        // Layout constraints for `hourLabel`
         NSLayoutConstraint.activate([
             hourLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Constants.horizontalPadding),
             hourLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Constants.horizontalPadding),
             hourLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Constants.profileDescriptionVerticalPadding)
+        ])
+        
+        NSLayoutConstraint.activate([
+            taskLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Constants.horizontalPadding),
+            taskLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Constants.horizontalPadding),
+            taskLabel.topAnchor.constraint(equalTo: hourLabel.bottomAnchor, constant: 8.0),
+            taskLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Constants.profileDescriptionVerticalPadding)
         ])
 
     }
@@ -59,7 +75,8 @@ class OneDayCollectionViewCell: UICollectionViewCell {
     
     func setup(with hour: HourBlock) {
         hourLabel.text = hour.time
-        //name.text = hour.time
+        taskLabel.text = hour.task.description
+        self.backgroundColor = UIColor.init(rgb: hour.task.color)
     }
 }
 

@@ -103,41 +103,41 @@ class ViewController: UIViewController {
     private func populateTasks() {
         tasks = [
             TaskItem(uid: 0, color: 0xFFFFFF, description: "", order: 0, is_hidden: false),
-            TaskItem(uid: 0, color: 0x57838D, description: "sleep", order: 1, is_hidden: false),
-            TaskItem(uid: 0, color: 0xF3BFB3, description: "work", order: 2, is_hidden: false),
-            TaskItem(uid: 0, color: 0x50B4D8, description: "chores", order: 3, is_hidden: false),
-            TaskItem(uid: 0, color: 0xCAB3C1, description: "study", order: 4, is_hidden: false),
-            TaskItem(uid: 0, color: 0xA7D9C9, description: "leisure", order: 5, is_hidden: false),
-            TaskItem(uid: 0, color: 0xD3C0F9, description: "other", order: 6, is_hidden: false)
+            TaskItem(uid: 1, color: 0x57838D, description: "sleep", order: 1, is_hidden: false),
+            TaskItem(uid: 2, color: 0xF3BFB3, description: "work", order: 2, is_hidden: false),
+            TaskItem(uid: 3, color: 0x50B4D8, description: "chores", order: 3, is_hidden: false),
+            TaskItem(uid: 4, color: 0xCAB3C1, description: "study", order: 4, is_hidden: false),
+            TaskItem(uid: 5, color: 0xA7D9C9, description: "leisure", order: 5, is_hidden: false),
+            TaskItem(uid: 6, color: 0xD3C0F9, description: "other", order: 6, is_hidden: false)
         ]
     }
     
     private func populateHours() {
         hours = [
             HourBlock(id: 0, time: "12 AM", task: tasks.first!),
-            HourBlock(id: 0, time: "1 AM", task: tasks.first!),
-            HourBlock(id: 0, time: "2 AM", task: tasks.first!),
-            HourBlock(id: 0, time: "3 AM", task: tasks.first!),
-            HourBlock(id: 0, time: "4 AM", task: tasks.first!),
-            HourBlock(id: 0, time: "5 AM", task: tasks.first!),
-            HourBlock(id: 0, time: "6 AM", task: tasks.first!),
-            HourBlock(id: 0, time: "7 AM", task: tasks.first!),
-            HourBlock(id: 0, time: "8 AM", task: tasks.first!),
-            HourBlock(id: 0, time: "9 AM", task: tasks.first!),
-            HourBlock(id: 0, time: "10 AM", task: tasks.first!),
-            HourBlock(id: 0, time: "11 AM", task: tasks.first!),
-            HourBlock(id: 0, time: "12 PM", task: tasks.first!),
-            HourBlock(id: 0, time: "1 PM", task: tasks.first!),
-            HourBlock(id: 0, time: "2 PM", task: tasks.first!),
-            HourBlock(id: 0, time: "3 PM", task: tasks.first!),
-            HourBlock(id: 0, time: "4 PM", task: tasks.first!),
-            HourBlock(id: 0, time: "5 PM", task: tasks.first!),
-            HourBlock(id: 0, time: "6 PM", task: tasks.first!),
-            HourBlock(id: 0, time: "7 PM", task: tasks.first!),
-            HourBlock(id: 0, time: "8 PM", task: tasks.first!),
-            HourBlock(id: 0, time: "9 PM", task: tasks.first!),
-            HourBlock(id: 0, time: "10 PM", task: tasks.first!),
-            HourBlock(id: 0, time: "11 PM", task: tasks.first!)
+            HourBlock(id: 1, time: "1 AM", task: tasks.first!),
+            HourBlock(id: 2, time: "2 AM", task: tasks.first!),
+            HourBlock(id: 3, time: "3 AM", task: tasks.first!),
+            HourBlock(id: 4, time: "4 AM", task: tasks.first!),
+            HourBlock(id: 5, time: "5 AM", task: tasks.first!),
+            HourBlock(id: 6, time: "6 AM", task: tasks.first!),
+            HourBlock(id: 7, time: "7 AM", task: tasks.first!),
+            HourBlock(id: 8, time: "8 AM", task: tasks.first!),
+            HourBlock(id: 9, time: "9 AM", task: tasks.first!),
+            HourBlock(id: 10, time: "10 AM", task: tasks.first!),
+            HourBlock(id: 11, time: "11 AM", task: tasks.first!),
+            HourBlock(id: 12, time: "12 PM", task: tasks.first!),
+            HourBlock(id: 13, time: "1 PM", task: tasks.first!),
+            HourBlock(id: 14, time: "2 PM", task: tasks.first!),
+            HourBlock(id: 15, time: "3 PM", task: tasks.first!),
+            HourBlock(id: 16, time: "4 PM", task: tasks.first!),
+            HourBlock(id: 17, time: "5 PM", task: tasks.first!),
+            HourBlock(id: 18, time: "6 PM", task: tasks.first!),
+            HourBlock(id: 19, time: "7 PM", task: tasks.first!),
+            HourBlock(id: 20, time: "8 PM", task: tasks.first!),
+            HourBlock(id: 21, time: "9 PM", task: tasks.first!),
+            HourBlock(id: 22, time: "10 PM", task: tasks.first!),
+            HourBlock(id: 23, time: "11 PM", task: tasks.first!)
         ]
     }
     
@@ -215,6 +215,44 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
 // Click Handler
 extension ViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let hourCell = collectionView.cellForItem(at: indexPath) as? OneDayCollectionViewCell {
+            /*
+             val selected_block_id = hour_block.id
+
+                        val current_task_id = HourBlockContent.DEFAULT_TASKS.indexOf(hour_block.task)
+                         val next_task_id = current_task_id + 1
+
+                         if (next_task_id < HourBlockContent.DEFAULT_TASKS.size) {
+                             hour_block.task = HourBlockContent.DEFAULT_TASKS.get(next_task_id)
+                         } else {
+                             hour_block.task = HourBlockContent.DEFAULT_TASKS.first()
+                         }
+
+                         CurrentDay.getDay().editable_hours?.get(selected_block_id)?.task = hour_block.task
+                         CurrentDay.updateDB(view.context)
+
+                         holder.itemView.setBackgroundColor(Color.parseColor(hour_block.task.color))
+                         holder.blockDescription.text = hour_block.task.description.uppercase()
+             */
+            
+            var hour = hours[indexPath.row]
+            
+            let current_task_id = tasks.firstIndex(where: {$0.uid == hour.task.uid})
+            let next_task_id = current_task_id! + 1
+            
+            if (next_task_id < tasks.count) {
+                hour.task = tasks[next_task_id]
+            } else {
+                hour.task = tasks.first!
+            }
+            
+            
+            //hour.task = tasks[1]
+            hours[indexPath.row] = hour
+            hourCell.setup(with: hour)
+            hourCell.contentView.backgroundColor = UIColor(rgb: hour.task.color)
+        }
+        
         print("User tapped on item \(indexPath.row)")
     }
 }

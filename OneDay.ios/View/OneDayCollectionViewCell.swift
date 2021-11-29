@@ -73,7 +73,7 @@ class OneDayCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setup(with hour: HourBlock) {
+    func setup(with hour: HourModel) {
         hourLabel.text = hour.time
         taskLabel.text = hour.task.description
         self.backgroundColor = UIColor.init(rgb: hour.task.color)

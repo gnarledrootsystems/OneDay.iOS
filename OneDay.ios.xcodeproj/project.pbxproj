@@ -3,10 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C44EDDAB2755512B00D438E2 /* DayDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44EDDAA2755512B00D438E2 /* DayDao.swift */; };
+		C44EDDBE27555F2100D438E2 /* DayModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44EDDBD27555F2100D438E2 /* DayModel.swift */; };
+		C44EDDC327555F6F00D438E2 /* HourModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44EDDC227555F6F00D438E2 /* HourModel.swift */; };
+		C44EDDC82755655A00D438E2 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44EDDC72755655A00D438E2 /* TaskModel.swift */; };
+		C44EDDD727556E1D00D438E2 /* DayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44EDDD627556E1D00D438E2 /* DayViewController.swift */; };
 		C485CDF0274E845500D2CB6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C485CDEF274E845500D2CB6A /* AppDelegate.swift */; };
 		C485CDF2274E845500D2CB6A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C485CDF1274E845500D2CB6A /* SceneDelegate.swift */; };
 		C485CDF4274E845500D2CB6A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C485CDF3274E845500D2CB6A /* ViewController.swift */; };
@@ -17,8 +22,7 @@
 		C485CE0A274E845800D2CB6A /* OneDay_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C485CE09274E845800D2CB6A /* OneDay_iosTests.swift */; };
 		C485CE15274E845800D2CB6A /* OneDay_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C485CE14274E845800D2CB6A /* OneDay_iosUITests.swift */; };
 		C485CE31274EAAE500D2CB6A /* OneDayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C485CE30274EAAE500D2CB6A /* OneDayCollectionViewCell.swift */; };
-		C485CE3E274ED2C200D2CB6A /* HourBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C485CE3D274ED2C200D2CB6A /* HourBlock.swift */; };
-		C485CE43274ED2CE00D2CB6A /* TaskItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C485CE42274ED2CE00D2CB6A /* TaskItem.swift */; };
+		C49FC487275483DC007E3C14 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = C49FC486275483DC007E3C14 /* SQLite */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +43,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C44EDDAA2755512B00D438E2 /* DayDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayDao.swift; sourceTree = "<group>"; };
+		C44EDDBD27555F2100D438E2 /* DayModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayModel.swift; sourceTree = "<group>"; };
+		C44EDDC227555F6F00D438E2 /* HourModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourModel.swift; sourceTree = "<group>"; };
+		C44EDDC72755655A00D438E2 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
+		C44EDDD627556E1D00D438E2 /* DayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewController.swift; sourceTree = "<group>"; };
 		C485CDEC274E845500D2CB6A /* OneDay.ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneDay.ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C485CDEF274E845500D2CB6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C485CDF1274E845500D2CB6A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,8 +64,6 @@
 		C485CE14274E845800D2CB6A /* OneDay_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneDay_iosUITests.swift; sourceTree = "<group>"; };
 		C485CE16274E845800D2CB6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C485CE30274EAAE500D2CB6A /* OneDayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneDayCollectionViewCell.swift; sourceTree = "<group>"; };
-		C485CE3D274ED2C200D2CB6A /* HourBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourBlock.swift; sourceTree = "<group>"; };
-		C485CE42274ED2CE00D2CB6A /* TaskItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C49FC487275483DC007E3C14 /* SQLite in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +92,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C44EDDB727555EDB00D438E2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C44EDDD627556E1D00D438E2 /* DayViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		C44EDDB827555EE300D438E2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C485CE30274EAAE500D2CB6A /* OneDayCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C44EDDB927555EED00D438E2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C44EDDBD27555F2100D438E2 /* DayModel.swift */,
+				C44EDDC227555F6F00D438E2 /* HourModel.swift */,
+				C44EDDC72755655A00D438E2 /* TaskModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C44EDDCF27556A0700D438E2 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				C485CDF5274E845500D2CB6A /* Main.storyboard */,
+				C485CDFD274E845800D2CB6A /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		C44EDDDB27556FEE00D438E2 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		C485CDE3274E845500D2CB6A = {
 			isa = PBXGroup;
 			children = (
@@ -107,17 +157,18 @@
 		C485CDEE274E845500D2CB6A /* OneDay.ios */ = {
 			isa = PBXGroup;
 			children = (
+				C44EDDDB27556FEE00D438E2 /* Assets */,
+				C44EDDCF27556A0700D438E2 /* Storyboards */,
+				C44EDDB927555EED00D438E2 /* Model */,
+				C44EDDB827555EE300D438E2 /* View */,
+				C44EDDB727555EDB00D438E2 /* Controller */,
 				C485CDEF274E845500D2CB6A /* AppDelegate.swift */,
 				C485CDF1274E845500D2CB6A /* SceneDelegate.swift */,
 				C485CDF3274E845500D2CB6A /* ViewController.swift */,
-				C485CDF5274E845500D2CB6A /* Main.storyboard */,
 				C485CDFB274E845800D2CB6A /* Assets.xcassets */,
-				C485CDFD274E845800D2CB6A /* LaunchScreen.storyboard */,
 				C485CE00274E845800D2CB6A /* Info.plist */,
 				C485CDF8274E845500D2CB6A /* OneDay_ios.xcdatamodeld */,
-				C485CE30274EAAE500D2CB6A /* OneDayCollectionViewCell.swift */,
-				C485CE3D274ED2C200D2CB6A /* HourBlock.swift */,
-				C485CE42274ED2CE00D2CB6A /* TaskItem.swift */,
+				C44EDDAA2755512B00D438E2 /* DayDao.swift */,
 			);
 			path = OneDay.ios;
 			sourceTree = "<group>";
@@ -156,6 +207,9 @@
 			dependencies = (
 			);
 			name = OneDay.ios;
+			packageProductDependencies = (
+				C49FC486275483DC007E3C14 /* SQLite */,
+			);
 			productName = OneDay.ios;
 			productReference = C485CDEC274E845500D2CB6A /* OneDay.ios.app */;
 			productType = "com.apple.product-type.application";
@@ -227,6 +281,9 @@
 				Base,
 			);
 			mainGroup = C485CDE3274E845500D2CB6A;
+			packageReferences = (
+				C49FC485275483DC007E3C14 /* XCRemoteSwiftPackageReference "SQLite" */,
+			);
 			productRefGroup = C485CDED274E845500D2CB6A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -271,12 +328,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				C485CDF4274E845500D2CB6A /* ViewController.swift in Sources */,
+				C44EDDD727556E1D00D438E2 /* DayViewController.swift in Sources */,
+				C44EDDC327555F6F00D438E2 /* HourModel.swift in Sources */,
 				C485CDFA274E845500D2CB6A /* OneDay_ios.xcdatamodeld in Sources */,
 				C485CDF0274E845500D2CB6A /* AppDelegate.swift in Sources */,
-				C485CE3E274ED2C200D2CB6A /* HourBlock.swift in Sources */,
+				C44EDDC82755655A00D438E2 /* TaskModel.swift in Sources */,
+				C44EDDAB2755512B00D438E2 /* DayDao.swift in Sources */,
+				C44EDDBE27555F2100D438E2 /* DayModel.swift in Sources */,
 				C485CE31274EAAE500D2CB6A /* OneDayCollectionViewCell.swift in Sources */,
 				C485CDF2274E845500D2CB6A /* SceneDelegate.swift in Sources */,
-				C485CE43274ED2CE00D2CB6A /* TaskItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -603,6 +663,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C49FC485275483DC007E3C14 /* XCRemoteSwiftPackageReference "SQLite" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephencelis/SQLite.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.13.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C49FC486275483DC007E3C14 /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C49FC485275483DC007E3C14 /* XCRemoteSwiftPackageReference "SQLite" */;
+			productName = SQLite;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		C485CDF8274E845500D2CB6A /* OneDay_ios.xcdatamodeld */ = {

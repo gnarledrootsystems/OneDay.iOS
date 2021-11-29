@@ -21,8 +21,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: scene)
         window?.frame = UIScreen.main.bounds
 
-        let viewController = ViewController()
-        let navigationController = UINavigationController(rootViewController: viewController)
+        let dayViewController = DayViewController()
+        let navigationController = UINavigationController(rootViewController: dayViewController)
 
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()

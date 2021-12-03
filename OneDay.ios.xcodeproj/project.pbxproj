@@ -12,6 +12,7 @@
 		C44EDDC327555F6F00D438E2 /* HourModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44EDDC227555F6F00D438E2 /* HourModel.swift */; };
 		C44EDDC82755655A00D438E2 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44EDDC72755655A00D438E2 /* TaskModel.swift */; };
 		C44EDDD727556E1D00D438E2 /* DayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44EDDD627556E1D00D438E2 /* DayViewController.swift */; };
+		C45C1FDB2758569700A80AA2 /* CurrentDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45C1FDA2758569700A80AA2 /* CurrentDay.swift */; };
 		C485CDF0274E845500D2CB6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C485CDEF274E845500D2CB6A /* AppDelegate.swift */; };
 		C485CDF2274E845500D2CB6A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C485CDF1274E845500D2CB6A /* SceneDelegate.swift */; };
 		C485CDF4274E845500D2CB6A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C485CDF3274E845500D2CB6A /* ViewController.swift */; };
@@ -48,6 +49,7 @@
 		C44EDDC227555F6F00D438E2 /* HourModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourModel.swift; sourceTree = "<group>"; };
 		C44EDDC72755655A00D438E2 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		C44EDDD627556E1D00D438E2 /* DayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewController.swift; sourceTree = "<group>"; };
+		C45C1FDA2758569700A80AA2 /* CurrentDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentDay.swift; sourceTree = "<group>"; };
 		C485CDEC274E845500D2CB6A /* OneDay.ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneDay.ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C485CDEF274E845500D2CB6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C485CDF1274E845500D2CB6A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				C44EDDBD27555F2100D438E2 /* DayModel.swift */,
 				C44EDDC227555F6F00D438E2 /* HourModel.swift */,
 				C44EDDC72755655A00D438E2 /* TaskModel.swift */,
+				C45C1FDA2758569700A80AA2 /* CurrentDay.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 				C44EDDC327555F6F00D438E2 /* HourModel.swift in Sources */,
 				C485CDFA274E845500D2CB6A /* OneDay_ios.xcdatamodeld in Sources */,
 				C485CDF0274E845500D2CB6A /* AppDelegate.swift in Sources */,
+				C45C1FDB2758569700A80AA2 /* CurrentDay.swift in Sources */,
 				C44EDDC82755655A00D438E2 /* TaskModel.swift in Sources */,
 				C44EDDAB2755512B00D438E2 /* DayDao.swift in Sources */,
 				C44EDDBE27555F2100D438E2 /* DayModel.swift in Sources */,

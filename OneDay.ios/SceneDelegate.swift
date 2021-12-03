@@ -21,6 +21,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: scene)
         window?.frame = UIScreen.main.bounds
 
+        // Initialize DB Tables
+        CurrentDay.dbTableInit()
+        
         let dayViewController = DayViewController()
         let navigationController = UINavigationController(rootViewController: dayViewController)
 

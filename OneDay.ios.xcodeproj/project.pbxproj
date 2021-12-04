@@ -24,7 +24,6 @@
 		C485CE15274E845800D2CB6A /* OneDay_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C485CE14274E845800D2CB6A /* OneDay_iosUITests.swift */; };
 		C485CE31274EAAE500D2CB6A /* OneDayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C485CE30274EAAE500D2CB6A /* OneDayCollectionViewCell.swift */; };
 		C49FC487275483DC007E3C14 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = C49FC486275483DC007E3C14 /* SQLite */; };
-		C4EEF1F8275AC7F5009D8A7D /* KDCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = C4EEF1F7275AC7F5009D8A7D /* KDCalendar */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,7 +74,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C49FC487275483DC007E3C14 /* SQLite in Frameworks */,
-				C4EEF1F8275AC7F5009D8A7D /* KDCalendar in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,7 +212,6 @@
 			name = OneDay.ios;
 			packageProductDependencies = (
 				C49FC486275483DC007E3C14 /* SQLite */,
-				C4EEF1F7275AC7F5009D8A7D /* KDCalendar */,
 			);
 			productName = OneDay.ios;
 			productReference = C485CDEC274E845500D2CB6A /* OneDay.ios.app */;
@@ -289,7 +286,6 @@
 			mainGroup = C485CDE3274E845500D2CB6A;
 			packageReferences = (
 				C49FC485275483DC007E3C14 /* XCRemoteSwiftPackageReference "SQLite" */,
-				C4EEF1F6275AC7F5009D8A7D /* XCRemoteSwiftPackageReference "CalendarView" */,
 			);
 			productRefGroup = C485CDED274E845500D2CB6A /* Products */;
 			projectDirPath = "";
@@ -681,14 +677,6 @@
 				minimumVersion = 0.13.1;
 			};
 		};
-		C4EEF1F6275AC7F5009D8A7D /* XCRemoteSwiftPackageReference "CalendarView" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/mmick66/CalendarView.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.8.9;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -696,11 +684,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C49FC485275483DC007E3C14 /* XCRemoteSwiftPackageReference "SQLite" */;
 			productName = SQLite;
-		};
-		C4EEF1F7275AC7F5009D8A7D /* KDCalendar */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = C4EEF1F6275AC7F5009D8A7D /* XCRemoteSwiftPackageReference "CalendarView" */;
-			productName = KDCalendar;
 		};
 /* End XCSwiftPackageProductDependency section */
 

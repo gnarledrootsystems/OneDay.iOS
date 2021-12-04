@@ -7,7 +7,6 @@
 
 import UIKit
 import SQLite
-import KDCalendar
 
 class DayViewController: UIViewController {
     var currentDay: DayModel? = nil

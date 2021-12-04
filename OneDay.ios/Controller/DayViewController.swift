@@ -28,11 +28,20 @@ class DayViewController: UIViewController {
     }
     
     @objc func showDatePickerModal() {
-        oneDayCollectionView.reloadData()
+        
     }
     
     @objc func dateChange(datePicker: UIDatePicker) {
-        print("Label Tapped")
+        datePicker.datePickerMode = UIDatePicker.Mode.date
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let selectedDate = dateFormatter.string(from: datePicker.date)
+        
+        UserDefaults.standard.set(selectedDate, forKey: "CurrentDate")
+        
+        setupViews()
+        setupLayouts()
+        oneDayCollectionView.reloadData()
     }
     
     override func viewDidLoad() {
@@ -43,6 +52,17 @@ class DayViewController: UIViewController {
         datePicker.addTarget(self, action: #selector(dateChange(datePicker:)), for: UIControl.Event.valueChanged)
         datePicker.preferredDatePickerStyle = .compact
         datePicker.tintColor = .white
+        
+        let dateNow: Date = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let today = dateFormatter.string(from: dateNow)
+        
+        let currentDate = UserDefaults.standard.string(forKey: "CurrentDate") ?? today
+        let datePickerDate = dateFormatter.date(from: currentDate)!
+        
+        datePicker.setDate(datePickerDate, animated: true)
+        
         navigationItem.titleView = datePicker
         
         navigationItem.hidesBackButton = true
@@ -67,9 +87,11 @@ class DayViewController: UIViewController {
         let dateNow: Date = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
-        let dateNowString = dateFormatter.string(from: dateNow)
+        let today = dateFormatter.string(from: dateNow)
         
-        currentDay = CurrentDay.insertAndRetrieveDay(date: dateNowString)
+        let currentDate = UserDefaults.standard.string(forKey: "CurrentDate") ?? today
+        
+        currentDay = CurrentDay.insertAndRetrieveDay(date: currentDate)
         
         oneDayCollectionView.dataSource = self
         oneDayCollectionView.delegate = self
@@ -154,6 +176,7 @@ extension DayViewController: UICollectionViewDelegateFlowLayout {
 extension DayViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if let hourCell = collectionView.cellForItem(at: indexPath) as? OneDayCollectionViewCell {
+            
             var hour = self.currentDay?.hours[indexPath.row]
             
             let current_task_id = defaultTasks.firstIndex(where: {$0.uid == hour?.task.uid})
@@ -193,17 +216,3 @@ extension UIColor {
        )
    }
 }
-
-protocol CalendarViewDataSource {
-    func startDate() -> NSDate // UTC Date
-    func endDate() -> NSDate   // UTC Date
-}
-protocol CalendarViewDelegate {
-    func calendar(_ calendar : CalendarView, canSelectDate date : Date) -> Bool /* optional */
-    func calendar(_ calendar : CalendarView, didScrollToMonth date : Date) -> Void
-    func calendar(_ calendar : CalendarView, didSelectDate date : Date, withEvents events: [CalendarEvent]) -> Void
-    func calendar(_ calendar : CalendarView, didDeselectDate date : Date) -> Void /* optional */
-    func calendar(_ calendar : CalendarView, didLongPressDate date : Date, withEvents events: [CalendarEvent]?) -> Void /* optional */
-}
-
-

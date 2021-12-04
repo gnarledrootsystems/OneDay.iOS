@@ -26,6 +26,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let dayViewController = DayViewController()
         let navigationController = UINavigationController(rootViewController: dayViewController)
+        navigationController.navigationBar.barTintColor = UIColor.init(rgb: 0x6D6DD9)
+
+        
+        
+        
+        // Navigation Bar Text:
+        //navigationController.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.orange]
 
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
@@ -64,4 +71,3 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
 }
-

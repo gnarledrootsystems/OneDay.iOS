@@ -42,7 +42,11 @@ class CurrentDay {
             let daysTable = Table("days")
             
             for day in try db!.prepare(daysTable.filter(dateColumn == date)) {
-                foundDayModel = DayModel(date: day[dateColumn], hours: DayModel.editableHours(hours: day[hoursColumn]))
+                if (day[hoursColumn].isEmpty) {
+                    foundDayModel = DayModel(date: day[dateColumn])
+                } else {
+                    foundDayModel = DayModel(date: day[dateColumn], hours: DayModel.editableHours(hours: day[hoursColumn]))
+                }
             }
             
             if (foundDayModel.date == "" || foundDayModel.hours.isEmpty) {

@@ -7,11 +7,12 @@
 
 import UIKit
 import SQLite
+import KDCalendar
 
 class DayViewController: UIViewController {
     var currentDay: DayModel? = nil
-    //var toolBar = UIToolbar()
-    //var datePicker  = UIDatePicker()
+    let datePicker = UIDatePicker()
+    
     
     private let oneDayCollectionView:UICollectionView = {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
@@ -26,95 +27,33 @@ class DayViewController: UIViewController {
         static let itemHeight: CGFloat = 300.0
     }
     
-    private lazy var datePicker : UIDatePicker = {
-            let datePicker = UIDatePicker()
-            datePicker.translatesAutoresizingMaskIntoConstraints = false
-            datePicker.autoresizingMask = .flexibleWidth
-            if #available(iOS 13, *) {
-                datePicker.backgroundColor = .label
-            } else {
-                datePicker.backgroundColor = .white
-            }
-            datePicker.datePickerMode = .date
-            datePicker.addTarget(self, action: #selector(self.dateChanged), for: .valueChanged)
-            return datePicker
-        }()
-        
-        private lazy var toolBar : UIToolbar = {
-            let toolBar = UIToolbar()
-            toolBar.translatesAutoresizingMaskIntoConstraints = false
-            toolBar.barStyle = .default
-            toolBar.items = [UIBarButtonItem.init(barButtonSystemItem: .flexibleSpace, target: nil, action: nil), UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(self.onDoneClicked))]
-            toolBar.sizeToFit()
-            return toolBar
-        }()
-        
-    @objc private func onDoneClicked(picker : UIDatePicker) {
-            
-        }
-        
-        @objc private func dateChanged(picker : UIDatePicker) {
-            
-        }
-
-    @objc private func addDatePicker() {
-            self.view.addSubview(self.datePicker)
-            self.view.addSubview(self.toolBar)
-            
-            NSLayoutConstraint.activate([
-                self.datePicker.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
-                self.datePicker.leftAnchor.constraint(equalTo: self.view.leftAnchor),
-                self.datePicker.rightAnchor.constraint(equalTo: self.view.rightAnchor),
-                self.datePicker.heightAnchor.constraint(equalToConstant: 300)
-            ])
-            
-            NSLayoutConstraint.activate([
-                self.toolBar.bottomAnchor.constraint(equalTo: self.datePicker.topAnchor),
-                self.toolBar.leftAnchor.constraint(equalTo: self.view.leftAnchor),
-                self.toolBar.rightAnchor.constraint(equalTo: self.view.rightAnchor),
-                self.toolBar.heightAnchor.constraint(equalToConstant: 50)
-            ])
-        }
-    
-    /*@objc private func dateSelector() {
-        datePicker = UIDatePicker.init()
-            datePicker.backgroundColor = UIColor.white
-                    
-            datePicker.autoresizingMask = .flexibleWidth
-            datePicker.datePickerMode = .date
-                    
-            datePicker.addTarget(self, action: #selector(self.dateChanged(_:)), for: .valueChanged)
-            datePicker.frame = CGRect(x: 0.0, y: UIScreen.main.bounds.size.height - 300, width: UIScreen.main.bounds.size.width, height: 300)
-            self.view.addSubview(datePicker)
-                    
-            toolBar = UIToolbar(frame: CGRect(x: 0, y: UIScreen.main.bounds.size.height - 300, width: UIScreen.main.bounds.size.width, height: 50))
-            toolBar.barStyle = .blackTranslucent
-            toolBar.items = [UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil), UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(self.onDoneButtonClick))]
-            toolBar.sizeToFit()
-            self.view.addSubview(toolBar)
+    @objc func showDatePickerModal() {
+        oneDayCollectionView.reloadData()
     }
     
-    @objc func dateChanged(_ sender: UIDatePicker?) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .long
-        dateFormatter.timeStyle = .none
-            
-        if let date = sender?.date {
-            print("Picked the date \(dateFormatter.string(from: date))")
-        }
+    @objc func dateChange(datePicker: UIDatePicker) {
+        print("Label Tapped")
     }
-
-    @objc func onDoneButtonClick() {
-        toolBar.removeFromSuperview()
-        datePicker.removeFromSuperview()
-    }*/
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //let button = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem, target: self, action: Selector("someAction"))
-        let button = UIBarButtonItem(title: "Date", style: .plain, target: self, action: #selector(self.addDatePicker))
+        let datePicker = UIDatePicker()
+        datePicker.datePickerMode = .date
+        datePicker.addTarget(self, action: #selector(dateChange(datePicker:)), for: UIControl.Event.valueChanged)
+        datePicker.preferredDatePickerStyle = .compact
+        datePicker.tintColor = .white
+        navigationItem.titleView = datePicker
+        
+        navigationItem.hidesBackButton = true
+        
+        let button = UIBarButtonItem(title: "OneDay", style: .plain, target: self, action: #selector(self.showDatePickerModal))
+        button.tintColor = .white
         navigationItem.rightBarButtonItem = button
+        
+       
+        
+        
         
         setupViews()
         setupLayouts()
@@ -149,17 +88,7 @@ class DayViewController: UIViewController {
             oneDayCollectionView.rightAnchor.constraint(equalTo: view.rightAnchor)
         ])
     }
-    
-    
-    
-    init() {
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        super.init(coder:coder)
-        //fatalError("init(coder:) has not been implemented")
-    }
+
 }
 
 extension DayViewController: UICollectionViewDataSource {
@@ -184,12 +113,13 @@ extension DayViewController: UICollectionViewDelegateFlowLayout {
         
         let statusBarFrameHeight = view.window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
         let navBarFrameHeight = self.navigationController!.navigationBar.frame.height
+        let window = UIApplication.shared.windows.first
+        let bottomPadding = (window?.safeAreaInsets.bottom)!
         
-        let navBarHeight = statusBarFrameHeight + navBarFrameHeight
-
-        let height = (view.frame.height  - navBarHeight) / 6
+        let navBarHeight = statusBarFrameHeight + navBarFrameHeight + bottomPadding
+        
+        let height = (view.frame.height - navBarHeight) / 6
         let width = (view.frame.width / 4)
-        //itemWidth(for: view.frame.width, spacing: LayoutConstant.spacing)
         
         return CGSize(width: width, height: height)
     }
@@ -264,5 +194,16 @@ extension UIColor {
    }
 }
 
+protocol CalendarViewDataSource {
+    func startDate() -> NSDate // UTC Date
+    func endDate() -> NSDate   // UTC Date
+}
+protocol CalendarViewDelegate {
+    func calendar(_ calendar : CalendarView, canSelectDate date : Date) -> Bool /* optional */
+    func calendar(_ calendar : CalendarView, didScrollToMonth date : Date) -> Void
+    func calendar(_ calendar : CalendarView, didSelectDate date : Date, withEvents events: [CalendarEvent]) -> Void
+    func calendar(_ calendar : CalendarView, didDeselectDate date : Date) -> Void /* optional */
+    func calendar(_ calendar : CalendarView, didLongPressDate date : Date, withEvents events: [CalendarEvent]?) -> Void /* optional */
+}
 
 

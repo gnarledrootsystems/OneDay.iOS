@@ -29,14 +29,18 @@
                                     <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="hourLabel" text="test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h5Z-YH-N5R">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="hourLabel" text="test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h5Z-YH-N5R">
                                             <rect key="frame" x="8" y="8" width="30" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="h5Z-YH-N5R" secondAttribute="trailing" constant="90" id="Hd7-v6-Ruu"/>
+                                        <constraint firstItem="h5Z-YH-N5R" firstAttribute="top" secondItem="PED-Eq-6H5" secondAttribute="top" constant="8" id="W8v-3L-Q57"/>
+                                        <constraint firstItem="h5Z-YH-N5R" firstAttribute="leading" secondItem="PED-Eq-6H5" secondAttribute="leading" constant="8" id="r5H-Pj-gAw"/>
+                                    </constraints>
                                 </collectionViewCellContentView>
                                 <connections>
                                     <outlet property="hourCellLabel" destination="h5Z-YH-N5R" id="RAh-pR-dl0"/>

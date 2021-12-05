@@ -15,9 +15,9 @@ protocol ReusableView: AnyObject {
 class OneDayCollectionViewCell: UICollectionViewCell {
     private enum Constants {
         // MARK: Generic layout constants
-        static let verticalSpacing: CGFloat = 8.0
+        static let verticalSpacing: CGFloat = 16.0
         static let horizontalPadding: CGFloat = 16.0
-        static let profileDescriptionVerticalPadding: CGFloat = 8.0
+        static let profileDescriptionVerticalPadding: CGFloat = 16.0
     }
     
     let hourLabel: UILabel = {
@@ -63,7 +63,7 @@ class OneDayCollectionViewCell: UICollectionViewCell {
         NSLayoutConstraint.activate([
             taskLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Constants.horizontalPadding),
             taskLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -Constants.horizontalPadding),
-            taskLabel.topAnchor.constraint(equalTo: hourLabel.bottomAnchor, constant: 8.0),
+            //taskLabel.topAnchor.constraint(equalTo: hourLabel.bottomAnchor, constant: 8.0),
             taskLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Constants.profileDescriptionVerticalPadding)
         ])
 
@@ -74,8 +74,8 @@ class OneDayCollectionViewCell: UICollectionViewCell {
     }
     
     func setup(with hour: HourModel) {
-        hourLabel.text = hour.time
-        taskLabel.text = hour.task.description
+        hourLabel.text = hour.time.uppercased()
+        taskLabel.text = hour.task.description.uppercased()
         self.backgroundColor = UIColor.init(rgb: hour.task.color)
     }
 }

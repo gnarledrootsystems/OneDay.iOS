@@ -22,6 +22,7 @@ class OneDayCollectionViewCell: UICollectionViewCell {
     
     let hourLabel: UILabel = {
         let label = UILabel(frame: .zero)
+        label.textColor = .black
         label.textAlignment = .left
         label.numberOfLines = 0
         return label
@@ -29,6 +30,7 @@ class OneDayCollectionViewCell: UICollectionViewCell {
     
     let taskLabel: UILabel = {
         let label = UILabel(frame: .zero)
+        label.textColor = .black
         label.textAlignment = .left
         label.numberOfLines = 0
         return label

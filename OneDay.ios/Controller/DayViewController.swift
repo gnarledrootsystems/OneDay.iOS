@@ -26,10 +26,6 @@ class DayViewController: UIViewController {
         static let itemHeight: CGFloat = 300.0
     }
     
-    @objc func showDatePickerModal() {
-        
-    }
-    
     @objc func dateChange(datePicker: UIDatePicker) {
         datePicker.datePickerMode = UIDatePicker.Mode.date
         let dateFormatter = DateFormatter()
@@ -52,8 +48,7 @@ class DayViewController: UIViewController {
         datePicker.datePickerMode = .date
         datePicker.addTarget(self, action: #selector(dateChange(datePicker:)), for: UIControl.Event.valueChanged)
         datePicker.preferredDatePickerStyle = .compact
-        datePicker.setValue(UIColor.red, forKey: "textColor")
-        //datePicker.tintColor = .white
+        datePicker.tintColor = .white
         
         let dateNow: Date = Date()
         let dateFormatter = DateFormatter()
@@ -67,13 +62,9 @@ class DayViewController: UIViewController {
         
         navigationItem.titleView = datePicker
         
-        let button = UIBarButtonItem(title: "OneDay", style: .plain, target: self, action: #selector(self.showDatePickerModal))
+        let button = UIBarButtonItem(title: "OneDay", style: .plain, target: self, action: nil)
         button.tintColor = .white
         navigationItem.leftBarButtonItem = button
-        
-       
-        
-        
         
         setupViews()
         setupLayouts()

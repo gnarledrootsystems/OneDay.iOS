@@ -26,7 +26,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let dayViewController = DayViewController()
         let navigationController = UINavigationController(rootViewController: dayViewController)
-        navigationController.navigationBar.barTintColor = UIColor.init(rgb: 0x6D6DD9)
+        navigationController.navigationBar.backgroundColor = UIColor.init(rgb: 0x6D6DD9)
 
         
         

@@ -11,8 +11,7 @@ import SQLite
 class DayViewController: UIViewController {
     var currentDay: DayModel? = nil
     let datePicker = UIDatePicker()
-    
-    
+
     private let oneDayCollectionView:UICollectionView = {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -62,14 +61,19 @@ class DayViewController: UIViewController {
         
         navigationItem.titleView = datePicker
         
-        let button = UIBarButtonItem(title: "OneDay", style: .plain, target: self, action: nil)
-        button.tintColor = .white
-        navigationItem.leftBarButtonItem = button
+        let buttonOneDay = UIBarButtonItem(title: "OneDay", style: .plain, target: self, action: nil)
+        buttonOneDay.tintColor = .white
+        navigationItem.leftBarButtonItem = buttonOneDay
+        
+        let buttonTasks = UIBarButtonItem(title: "Tasks", style: .plain, target: self, action: nil)
+        buttonTasks.tintColor = .white
+        navigationItem.rightBarButtonItem = buttonTasks
         
         setupViews()
         setupLayouts()
         oneDayCollectionView.reloadData()
     }
+
     
     private func setupViews() {
         view.backgroundColor = .white

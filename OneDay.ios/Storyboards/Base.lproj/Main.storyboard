@@ -60,7 +60,7 @@
         <!--Custom Task View Controller-->
         <scene sceneID="bwh-j8-Ega">
             <objects>
-                <tableViewController id="gmb-sl-pKP" customClass="CustomTaskViewController" customModule="OneDay_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="CustomTaskViewStoryBoard" id="gmb-sl-pKP" customClass="CustomTaskViewController" customModule="OneDay_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Rem-Ej-HKR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -163,7 +163,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RrO-KT-Bq0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1022" y="153"/>
+            <point key="canvasLocation" x="-986" y="175"/>
         </scene>
     </scenes>
     <resources>

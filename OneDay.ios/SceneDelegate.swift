@@ -23,6 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // Initialize DB Tables
         CurrentDay.dbTableInit()
+        CustomHourTask.dbTableInit()
         
         let dayViewController = DayViewController()
         let navigationController = UINavigationController(rootViewController: dayViewController)

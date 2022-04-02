@@ -9,14 +9,14 @@ import Foundation
 import SQLite
 
 class CurrentDay {
-    // Table Expressions
+    // Day Table Expressions
     static let daysTable = Table("days")
     static let dateColumn = Expression<String>("date")
     static let hoursColumn = Expression<String>("hours")
     
+    
     static func dbTableInit() {
         createDayTable()
-        createTaskTable()
     }
     
     static func dbConnect() -> Connection? {
@@ -52,7 +52,10 @@ class CurrentDay {
             if (foundDayModel.date == "" || foundDayModel.hours.isEmpty) {
                 foundDayModel.date = date
                 
-                let upsert = daysTable.upsert(dateColumn <- foundDayModel.date, hoursColumn <- DayModel.hoursToJson(hours: foundDayModel.hours), onConflictOf: dateColumn)
+                let upsert = daysTable.upsert(
+                    dateColumn <- foundDayModel.date,
+                    hoursColumn <- DayModel.hoursToJson(hours: foundDayModel.hours),
+                    onConflictOf: dateColumn)
                 let _ = try db!.run(upsert)
             }
         } catch let error {
@@ -85,10 +88,6 @@ class CurrentDay {
         } catch let error {
             print("Error creating Days Table: \(error)")
         }
-    }
-    
-    static func createTaskTable() {
-        // @TODO Get this done
     }
 }
 

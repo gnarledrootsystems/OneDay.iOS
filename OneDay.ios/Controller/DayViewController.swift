@@ -65,15 +65,24 @@ class DayViewController: UIViewController {
         buttonOneDay.tintColor = .white
         navigationItem.leftBarButtonItem = buttonOneDay
         
-        let buttonTasks = UIBarButtonItem(title: "Tasks", style: .plain, target: self, action: nil)
+        let buttonTasks = UIBarButtonItem(title: "Tasks", style: .plain, target: self, action: #selector(customTasksSeque))
         buttonTasks.tintColor = .white
+        
         navigationItem.rightBarButtonItem = buttonTasks
         
         setupViews()
         setupLayouts()
         oneDayCollectionView.reloadData()
     }
-
+    
+    @objc func customTasksSeque() {
+        //self.performSegue(withIdentifier: "test123", sender: nil)
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let CustomTaskViewDestination = storyboard.instantiateViewController(withIdentifier: "CustomTaskViewStoryBoard") as! CustomTaskViewController //UINavigationController
+        CustomTaskViewDestination.modalPresentationStyle = .fullScreen
+        self.navigationController!.pushViewController(CustomTaskViewDestination, animated: true)
+    }
     
     private func setupViews() {
         view.backgroundColor = .white

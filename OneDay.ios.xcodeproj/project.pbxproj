@@ -26,6 +26,7 @@
 		C499A5BF27F7EC2F0008EC94 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C499A5BE27F7EC2F0008EC94 /* TasksViewController.swift */; };
 		C499A5C127F7EC470008EC94 /* CustomTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C499A5C027F7EC470008EC94 /* CustomTaskViewController.swift */; };
 		C49FC487275483DC007E3C14 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = C49FC486275483DC007E3C14 /* SQLite */; };
+		C4A1159E27F8E1F100744281 /* CustomHourTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A1159D27F8E1F100744281 /* CustomHourTask.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +71,7 @@
 		C485CE30274EAAE500D2CB6A /* OneDayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneDayCollectionViewCell.swift; sourceTree = "<group>"; };
 		C499A5BE27F7EC2F0008EC94 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		C499A5C027F7EC470008EC94 /* CustomTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTaskViewController.swift; sourceTree = "<group>"; };
+		C4A1159D27F8E1F100744281 /* CustomHourTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHourTask.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 				C44EDDC227555F6F00D438E2 /* HourModel.swift */,
 				C44EDDC72755655A00D438E2 /* TaskModel.swift */,
 				C45C1FDA2758569700A80AA2 /* CurrentDay.swift */,
+				C4A1159D27F8E1F100744281 /* CustomHourTask.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 				C44EDDC82755655A00D438E2 /* TaskModel.swift in Sources */,
 				C44EDDAB2755512B00D438E2 /* DayDao.swift in Sources */,
 				C44EDDBE27555F2100D438E2 /* DayModel.swift in Sources */,
+				C4A1159E27F8E1F100744281 /* CustomHourTask.swift in Sources */,
 				C485CE31274EAAE500D2CB6A /* OneDayCollectionViewCell.swift in Sources */,
 				C485CDF2274E845500D2CB6A /* SceneDelegate.swift in Sources */,
 			);

@@ -8,7 +8,7 @@
 import Foundation
 
 struct TaskModel: Codable {
-    var uid: Int64
+    var uid: Int64?
     var color: Int
     var description: String
     var display_order: Int

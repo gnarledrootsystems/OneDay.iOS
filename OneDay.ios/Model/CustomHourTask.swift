@@ -152,7 +152,7 @@ class CustomHourTask {
         
         do {
             let rowid = try db!.run(hourTaskItemsTable.upsert(
-                ht_idColumn <- task.uid,
+                ht_idColumn <- task.uid!,
                 ht_colorColumn <- task.color,
                 ht_descriptionColumn <- task.description,
                 ht_displayOrder <- task.display_order,
@@ -170,7 +170,23 @@ class CustomHourTask {
         
         do {
             let rowid = try db!.run(hourTaskItemsTable.insert(
-                ht_idColumn <- task.uid,
+                ht_idColumn <- task.uid!,
+                ht_colorColumn <- task.color,
+                ht_descriptionColumn <- task.description,
+                ht_displayOrder <- task.display_order,
+                ht_isHidden <- task.is_hidden,
+                ht_isDeleted <- task.is_deleted))
+            print("inserted id: \(rowid)")
+        } catch {
+            print("insertion failed: \(error)")
+        }
+    }
+    
+    static func insertAutoIncrementTask(task: TaskModel) {
+        let db = dbConnect()
+        
+        do {
+            let rowid = try db!.run(hourTaskItemsTable.insert(
                 ht_colorColumn <- task.color,
                 ht_descriptionColumn <- task.description,
                 ht_displayOrder <- task.display_order,

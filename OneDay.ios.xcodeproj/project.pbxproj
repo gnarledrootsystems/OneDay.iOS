@@ -25,6 +25,7 @@
 		C485CE31274EAAE500D2CB6A /* OneDayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C485CE30274EAAE500D2CB6A /* OneDayCollectionViewCell.swift */; };
 		C499A5BF27F7EC2F0008EC94 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C499A5BE27F7EC2F0008EC94 /* TasksViewController.swift */; };
 		C499A5C127F7EC470008EC94 /* CustomTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C499A5C027F7EC470008EC94 /* CustomTaskViewController.swift */; };
+		C49DAE7027FBF8A900ACCB0F /* CreateCustomTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49DAE6F27FBF8A900ACCB0F /* CreateCustomTaskViewController.swift */; };
 		C49FC487275483DC007E3C14 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = C49FC486275483DC007E3C14 /* SQLite */; };
 		C4A1159E27F8E1F100744281 /* CustomHourTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A1159D27F8E1F100744281 /* CustomHourTask.swift */; };
 /* End PBXBuildFile section */
@@ -71,6 +72,7 @@
 		C485CE30274EAAE500D2CB6A /* OneDayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneDayCollectionViewCell.swift; sourceTree = "<group>"; };
 		C499A5BE27F7EC2F0008EC94 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		C499A5C027F7EC470008EC94 /* CustomTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTaskViewController.swift; sourceTree = "<group>"; };
+		C49DAE6F27FBF8A900ACCB0F /* CreateCustomTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCustomTaskViewController.swift; sourceTree = "<group>"; };
 		C4A1159D27F8E1F100744281 /* CustomHourTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHourTask.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,6 +108,7 @@
 				C44EDDD627556E1D00D438E2 /* DayViewController.swift */,
 				C499A5BE27F7EC2F0008EC94 /* TasksViewController.swift */,
 				C499A5C027F7EC470008EC94 /* CustomTaskViewController.swift */,
+				C49DAE6F27FBF8A900ACCB0F /* CreateCustomTaskViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 			files = (
 				C485CDF4274E845500D2CB6A /* ViewController.swift in Sources */,
 				C44EDDD727556E1D00D438E2 /* DayViewController.swift in Sources */,
+				C49DAE7027FBF8A900ACCB0F /* CreateCustomTaskViewController.swift in Sources */,
 				C44EDDC327555F6F00D438E2 /* HourModel.swift in Sources */,
 				C485CDFA274E845500D2CB6A /* OneDay_ios.xcdatamodeld in Sources */,
 				C485CDF0274E845500D2CB6A /* AppDelegate.swift in Sources */,

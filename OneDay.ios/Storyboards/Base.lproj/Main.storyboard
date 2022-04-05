@@ -120,29 +120,86 @@
                             <outlet property="delegate" destination="gmb-sl-pKP" id="dC8-GX-HYX"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="9EY-yi-KCG"/>
-                    <connections>
-                        <outlet property="tableView" destination="Rem-Ej-HKR" id="APs-9i-SLl"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="9EY-yi-KCG">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="0w6-hL-Ow2">
+                            <connections>
+                                <segue destination="WRB-Om-Emc" kind="showDetail" id="D3R-Au-avd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ydx-uv-CnN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="840.57971014492762" y="174.77678571428569"/>
         </scene>
-        <!--View Controller-->
+        <!--Create Custom Task View Controller-->
         <scene sceneID="T6b-Wx-VN8">
             <objects>
-                <viewController id="WRB-Om-Emc" sceneMemberID="viewController">
+                <viewController id="WRB-Om-Emc" customClass="CreateCustomTaskViewController" customModule="OneDay_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Qj-sh-i8T">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Create Custom Task" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FX2-d7-Lb8">
+                                <rect key="frame" x="46" y="44" width="322" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Task Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kAP-bQ-c9m">
+                                <rect key="frame" x="107" y="145" width="200" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3bd-bH-4HH">
+                                <rect key="frame" x="108" y="315" width="200" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Color Picker"/>
+                                <connections>
+                                    <action selector="ShowColorPicker:" destination="WRB-Om-Emc" eventType="touchUpInside" id="klp-dG-Wb0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6aB-Dj-MKm">
+                                <rect key="frame" x="107" y="440" width="200" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Save"/>
+                                <connections>
+                                    <action selector="SaveCustomTask:" destination="WRB-Om-Emc" eventType="touchUpInside" id="oDn-0f-JNf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" role="cancel" translatesAutoresizingMaskIntoConstraints="NO" id="e7f-PU-tRA">
+                                <rect key="frame" x="108" y="498" width="200" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Cancel"/>
+                                <connections>
+                                    <action selector="CancelCustomTask:" destination="WRB-Om-Emc" eventType="touchUpInside" id="Pfr-05-zao"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Test Text" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pbl-CT-DRK">
+                                <rect key="frame" x="107" y="207" width="200" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="o5k-gn-Tvg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="u1c-T5-Zmw"/>
+                    <connections>
+                        <outlet property="TaskNameInput" destination="kAP-bQ-c9m" id="C3b-Cd-rEw"/>
+                        <outlet property="colorDisplayView" destination="Pbl-CT-DRK" id="ZpJ-to-rKt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="boo-j7-fzI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1778" y="155"/>
+            <point key="canvasLocation" x="1776.8115942028987" y="154.6875"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5Lz-wK-rO1">

@@ -11,6 +11,7 @@ import SQLite
 class DayViewController: UIViewController {
     var currentDay: DayModel? = nil
     let datePicker = UIDatePicker()
+    var defaultTasks: Array<TaskModel> = []
 
     private let oneDayCollectionView:UICollectionView = {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
@@ -38,6 +39,10 @@ class DayViewController: UIViewController {
         oneDayCollectionView.reloadData()
         
         presentedViewController?.dismiss(animated: true, completion: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        defaultTasks = CustomHourTask.getAllUsableTasks()
     }
     
     override func viewDidLoad() {
@@ -69,6 +74,8 @@ class DayViewController: UIViewController {
         buttonTasks.tintColor = .white
         
         navigationItem.rightBarButtonItem = buttonTasks
+        
+        
         
         setupViews()
         setupLayouts()

@@ -25,6 +25,7 @@
 		C485CE31274EAAE500D2CB6A /* OneDayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C485CE30274EAAE500D2CB6A /* OneDayCollectionViewCell.swift */; };
 		C499A5BF27F7EC2F0008EC94 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C499A5BE27F7EC2F0008EC94 /* TasksViewController.swift */; };
 		C499A5C127F7EC470008EC94 /* CustomTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C499A5C027F7EC470008EC94 /* CustomTaskViewController.swift */; };
+		C499A80A27FD078A0009213C /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C499A80927FD078A0009213C /* CustomNavigationController.swift */; };
 		C49DAE7027FBF8A900ACCB0F /* CreateCustomTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49DAE6F27FBF8A900ACCB0F /* CreateCustomTaskViewController.swift */; };
 		C49FC487275483DC007E3C14 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = C49FC486275483DC007E3C14 /* SQLite */; };
 		C4A1159E27F8E1F100744281 /* CustomHourTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A1159D27F8E1F100744281 /* CustomHourTask.swift */; };
@@ -72,6 +73,7 @@
 		C485CE30274EAAE500D2CB6A /* OneDayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneDayCollectionViewCell.swift; sourceTree = "<group>"; };
 		C499A5BE27F7EC2F0008EC94 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		C499A5C027F7EC470008EC94 /* CustomTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTaskViewController.swift; sourceTree = "<group>"; };
+		C499A80927FD078A0009213C /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		C49DAE6F27FBF8A900ACCB0F /* CreateCustomTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCustomTaskViewController.swift; sourceTree = "<group>"; };
 		C4A1159D27F8E1F100744281 /* CustomHourTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomHourTask.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -109,6 +111,7 @@
 				C499A5BE27F7EC2F0008EC94 /* TasksViewController.swift */,
 				C499A5C027F7EC470008EC94 /* CustomTaskViewController.swift */,
 				C49DAE6F27FBF8A900ACCB0F /* CreateCustomTaskViewController.swift */,
+				C499A80927FD078A0009213C /* CustomNavigationController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				C44EDDD727556E1D00D438E2 /* DayViewController.swift in Sources */,
 				C49DAE7027FBF8A900ACCB0F /* CreateCustomTaskViewController.swift in Sources */,
 				C44EDDC327555F6F00D438E2 /* HourModel.swift in Sources */,
+				C499A80A27FD078A0009213C /* CustomNavigationController.swift in Sources */,
 				C485CDFA274E845500D2CB6A /* OneDay_ios.xcdatamodeld in Sources */,
 				C485CDF0274E845500D2CB6A /* AppDelegate.swift in Sources */,
 				C499A5BF27F7EC2F0008EC94 /* TasksViewController.swift in Sources */,
@@ -539,16 +543,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Dylan Nunns (DW6777KA6V)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = DW6777KA6V;
 				INFOPLIST_FILE = OneDay.ios/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gnarledrootsystems.oneday;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Gnarled Root Systems Distribution Provisioning Pro";
@@ -562,16 +566,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Dylan Nunns (DW6777KA6V)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = DW6777KA6V;
 				INFOPLIST_FILE = OneDay.ios/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gnarledrootsystems.oneday;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "Gnarled Root Systems Distribution Provisioning Pro";

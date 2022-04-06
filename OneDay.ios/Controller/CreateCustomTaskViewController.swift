@@ -51,18 +51,20 @@ class CreateCustomTaskViewController: UIViewController {
         let task_name = self.TaskNameInput.text
         let selected_color = self.colorDisplayView.backgroundColor
         
-        let rgbColorValue = selected_color?.rgb()
+        if (selected_color != nil) {
+            let rgbColorValue = selected_color?.rgb()
 
-        let customTask: TaskModel = TaskModel(
-            uid: nil,
-            color: rgbColorValue!,
-            description: task_name!,
-            display_order: 1,
-            is_hidden: false,
-            is_deleted: false
-        )
-        
-        CustomHourTask.insertAutoIncrementTask(task: customTask)
+            let customTask: TaskModel = TaskModel(
+                uid: nil,
+                color: rgbColorValue!,
+                description: task_name!,
+                display_order: 1,
+                is_hidden: false,
+                is_deleted: false
+            )
+            
+            CustomHourTask.insertAutoIncrementTask(task: customTask)
+        }
         
         dismiss_and_reload()
     }

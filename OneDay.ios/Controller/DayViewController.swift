@@ -42,7 +42,13 @@ class DayViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setNeedsStatusBarAppearanceUpdate()
         defaultTasks = CustomHourTask.getAllUsableTasks()
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
     }
     
     override func viewDidLoad() {
@@ -65,6 +71,7 @@ class DayViewController: UIViewController {
         datePicker.setDate(datePickerDate, animated: true)
         
         navigationItem.titleView = datePicker
+        navigationItem.titleView?.tintColor = .white
         
         let buttonOneDay = UIBarButtonItem(title: "OneDay", style: .plain, target: self, action: nil)
         buttonOneDay.tintColor = .white
@@ -75,7 +82,7 @@ class DayViewController: UIViewController {
         
         navigationItem.rightBarButtonItem = buttonTasks
         
-        
+        navigationController!.setStatusBar(backgroundColor: UIColor.init(rgb: 0x6D6DD9))
         
         setupViews()
         setupLayouts()

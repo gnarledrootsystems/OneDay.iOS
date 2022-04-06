@@ -15,7 +15,7 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="DayViewController" customModule="OneDay_ios" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="qfl-9b-GZ4">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uT8-xu-yYn">
@@ -57,7 +57,7 @@
             </objects>
             <point key="canvasLocation" x="-3" y="175"/>
         </scene>
-        <!--Custom Task View Controller-->
+        <!--Task List-->
         <scene sceneID="bwh-j8-Ega">
             <objects>
                 <tableViewController storyboardIdentifier="CustomTaskViewStoryBoard" id="gmb-sl-pKP" customClass="CustomTaskViewController" customModule="OneDay_ios" customModuleProvider="target" sceneMemberID="viewController">
@@ -120,7 +120,7 @@
                             <outlet property="delegate" destination="gmb-sl-pKP" id="dC8-GX-HYX"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="9EY-yi-KCG">
+                    <navigationItem key="navigationItem" title="Task List" id="9EY-yi-KCG">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="0w6-hL-Ow2">
                             <connections>
                                 <segue destination="WRB-Om-Emc" kind="showDetail" id="D3R-Au-avd"/>
@@ -205,17 +205,10 @@
         <scene sceneID="5Lz-wK-rO1">
             <objects>
                 <navigationController id="fTh-zi-mFM" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mAL-3y-m19">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="mAL-3y-m19">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </textAttributes>
-                        <textAttributes key="largeTitleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="fS9-Gs-GtS"/>

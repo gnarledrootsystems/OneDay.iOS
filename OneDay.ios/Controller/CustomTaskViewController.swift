@@ -83,9 +83,13 @@ class CustomTaskViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        
+        setNeedsStatusBarAppearanceUpdate()
         self.taskList = CustomHourTask.getAllNonDeletedTasks()
         self.tableView.reloadData()
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
     }
     
     override func viewDidLoad() {
@@ -93,6 +97,8 @@ class CustomTaskViewController: UITableViewController {
         
         self.tableView.reloadData()
         
+        navigationController?.navigationBar.tintColor = .white
+        navigationItem.titleView?.tintColor = .white
     }
     
     override func viewDidAppear(_ animated: Bool) {
